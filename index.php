@@ -49,16 +49,17 @@
     $app->POST('/api/transaksi/perpanjangan-peminjaman/', controller\TransaksiController::class. ':perpanjanganKoleksi');
     $app->POST('/api/aktivasi-anggota-online/', controller\AnggotaController::class. ':aktivasi');
 
-    
+    $app->GET('/', controller\HomeController::class. ':login_form');
+    $app->POST('/api-management/login/', controller\HomeController::class. ':login');
+    $app->GET('/api-management/logout/', controller\HomeController::class. ':logout');
+
     $app->GET('/api-management/', controller\HomeController::class);
     $app->POST('/api-management/', controller\HomeController::class. ':create_api');
     $app->PUT('/api-management/', controller\HomeController::class. ':update_api');
     $app->DELETE('/api-management/', controller\HomeController::class. ':delete_api');
 
     $app->GET('/api-management/ip/{api_key}/', controller\HomeController::class. ':get_ip');
-    $app->GET('/', controller\HomeController::class. ':login_form');
-    $app->POST('/api-management/login/', controller\HomeController::class. ':login');
-    $app->GET('/api-management/logout/', controller\HomeController::class. ':logout');
+    
     $app->run();
 
 ?>
