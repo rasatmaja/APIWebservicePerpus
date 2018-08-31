@@ -2,10 +2,7 @@
     use \Psr\Http\Message\ServerRequestInterface as Request;
     use \Psr\Http\Message\ResponseInterface as Response;
 
-    defined('APPLICATION_ENV')
-        || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? 
-                                    getenv('APPLICATION_ENV') : 
-                                    'local'));
+    defined('APPLICATION_ENV') || define('APPLICATION_ENV', (getenv('APPLICATION_ENV') ? getenv('APPLICATION_ENV') : 'local'));
 
     // show errors when working on local
     if(APPLICATION_ENV === 'local'){
