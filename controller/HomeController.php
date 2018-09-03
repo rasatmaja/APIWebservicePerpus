@@ -13,7 +13,7 @@
                 $phpView = new \Slim\Views\PhpRenderer("./view");
                 return $phpView->render($response, "/V_Api_Management.php", $data); 
             }else{
-                return $response->withRedirect('http://192.168.137.38:8123/API_Webservice_Perpus/');
+                return $response->withRedirect('http://localhost:8123/API_Webservice_Perpus/');
             }
         }
 
@@ -21,7 +21,7 @@
             error_reporting(0);
             session_start();
             if($_SESSION['authStatus']==true){
-                return $response->withRedirect('http://192.168.137.38:8123/API_Webservice_Perpus/api-management/'); 
+                return $response->withRedirect('http://localhost:8123/API_Webservice_Perpus/api-management/'); 
             }else{
                 $phpView = new \Slim\Views\PhpRenderer("./view");
                 return $phpView->render($response, "/V_Login_Form.php");
@@ -41,11 +41,11 @@
                     foreach($adminData as $a){
                         $_SESSION["authStatus"] = true;
                         $_SESSION["username"] = $a->nama_pengguna;
-                        return $response->withRedirect('http://192.168.137.38:8123/API_Webservice_Perpus/api-management/'); 
+                        return $response->withRedirect('http://localhost:8123/API_Webservice_Perpus/api-management/'); 
                     }
                 }else{
                     $_SESSION["failedLoginStatus"] = true;
-                    return $response->withRedirect('http://192.168.137.38:8123/API_Webservice_Perpus/'); 
+                    return $response->withRedirect('http://localhost:8123/API_Webservice_Perpus/'); 
                 }
         }
 
@@ -53,7 +53,7 @@
             session_start();
             $_SESSION['authStatus']=false;
             session_destroy(); 
-            return $response->withRedirect('http://192.168.137.38:8123/API_Webservice_Perpus/'); 
+            return $response->withRedirect('http://localhost:8123/API_Webservice_Perpus/'); 
         }
         
         public function get_ip($request, $response, $args){
