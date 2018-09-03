@@ -23,13 +23,12 @@
             $allowed = $api->ip($key);            
             
             foreach ($allowed as $kunci => $value) {
-                $allowed[] = $value->ip_address;
+                $ip_allowed[] = $value->ip;
             }
             
             $clientIp = $request->getAttribute('ip_address');
- 
             
-            if($api->cekValidasiAPI($key) == true && in_array($clientIp, $allowed )){
+            if($api->cekValidasiAPI($key) == true && in_array($clientIp, $ip_allowed )){
                 return $response = $next($request, $response);
             }
          
