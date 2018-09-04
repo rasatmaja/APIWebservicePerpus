@@ -35,7 +35,7 @@
                   </a>
                </li>
                <li class="nav-item dropdown d-none d-xl-inline-block">
-                  <a class="nav-link" href="http://192.168.137.38:8123/API_Webservice_Perpus/api-management/logout/">
+                  <a class="nav-link" href="http://localhost:8123/API_Webservice_Perpus/api-management/logout/">
                   <span class="profile-text">Logout</span>
                   <span class="mdi mdi-logout"></span>
                   </a>
@@ -44,7 +44,7 @@
             <a style="" class="navbar-toggler navbar-toggler-right d-lg-none align-left">
             Hello, <?php echo $_SESSION["username"]; ?>
             </a>
-            <a style="" href="http://192.168.137.38:8123/API_Webservice_Perpus/api-management/logout/" class="navbar-toggler navbar-toggler-right d-lg-none align-left">
+            <a style="" href="http://localhost:8123/API_Webservice_Perpus/api-management/logout/" class="navbar-toggler navbar-toggler-right d-lg-none align-left">
             Logout
             <span class="mdi mdi-exit-to-app"></span>
             </a>
@@ -228,7 +228,7 @@
          $(document).ready(function () {
            function edit_data(id, text, column_name) {
              $.ajax({
-               url: "http://192.168.137.38:8123/API_Webservice_Perpus/api-management/",
+               url: "http://localhost:8123/API_Webservice_Perpus/api-management/",
                method: "PUT",
                data: {
                  id: id,
@@ -244,7 +244,7 @@
          
            function delete_data(id) {
              $.ajax({
-               url: "http://192.168.137.38:8123/API_Webservice_Perpus/api-management/",
+               url: "http://localhost:8123/API_Webservice_Perpus/api-management/",
                method: "DELETE",
                data: {
                  api_key: id
@@ -256,14 +256,14 @@
                    text: "Data API berhasil dihapus",
                    type: "success"
                  }, function () {
-                   window.location = "http://192.168.137.38:8123/API_Webservice_Perpus/api-management/";
+                   window.location = "http://localhost:8123/API_Webservice_Perpus/api-management/";
                  });
                }
              });
            }
          
            function show_ip(id) {
-             var url = 'http://192.168.137.38:8123/API_Webservice_Perpus/api-management/ip/' + id + '/';
+             var url = 'http://localhost:8123/API_Webservice_Perpus/api-management/ip/' + id + '/';
              $.ajax({
                url: url,
                type: 'GET',
@@ -283,7 +283,7 @@
              var ip2 = $('#ipaddress2').val();
              
              $.ajax({
-               url: "http://192.168.137.38:8123/API_Webservice_Perpus/api-management/",
+               url: "http://localhost:8123/API_Webservice_Perpus/api-management/",
                method: "POST",
                data: {
                  namaunitkerja: nama,
@@ -297,7 +297,7 @@
                    text: "Data API berhasil ditambahkan",
                    type: "success"
                  }, function () {
-                   window.location = "http://192.168.137.38:8123/API_Webservice_Perpus/api-management/";
+                   window.location = "http://localhost:8123/API_Webservice_Perpus/api-management/";
                  });
                }
              });
