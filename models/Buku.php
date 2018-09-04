@@ -19,7 +19,7 @@
             $stmt->bindParam(5, $data["kota_terbit"], PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT, 25);
             $stmt->bindParam(6, $data["tahun_terbit"], PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT, 5);
             $stmt->bindParam(7, $data["keterangan"], PDO::PARAM_STR|PDO::PARAM_INPUT_OUTPUT, 225);
-            
+        
             if($stmt->execute()){
                 return true;
             }

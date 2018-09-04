@@ -42,7 +42,7 @@
         $app->get('/sudah-kembali/{nim}/', controller\TransaksiController::class. ':sudahKembali');
     })->add(controller\middlewares\MiddlewareController::class);
 
-    $app->POST('/api/buku/pengusulan-buku/', controller\BukuController::class. ':pengusulanBuku')->add(controller\middlewares\MiddlewareController::class. ':validasiIP');
+    $app->POST('/api/buku/pengusulan-buku/', controller\BukuController::class. ':pengusulanBuku');
     $app->POST('/api/transaksi/perpanjangan-peminjaman/', controller\TransaksiController::class. ':perpanjanganKoleksi');
     $app->POST('/api/aktivasi-anggota-online/', controller\AnggotaController::class. ':aktivasi');
 
