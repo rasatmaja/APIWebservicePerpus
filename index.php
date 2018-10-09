@@ -12,7 +12,9 @@
 
     $config = [
         'settings' => [
-            'displayErrorDetails' => true
+            'displayErrorDetails' => true,
+            'log.enable' => true,
+            'debug' => false
         ]
     ];
 
