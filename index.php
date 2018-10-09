@@ -10,22 +10,16 @@
         ini_set('display_errors', 1);
     }
 
+    $config = [
+        'settings' => [
+            'displayErrorDetails' => true
+        ]
+    ];
+
     require '/vendor/autoload.php';
     require '/configs/'.strtolower(APPLICATION_ENV).'.config.php';
 
-    $container = new \Slim\Container;
-    $container['cache'] = function () {
-        return new \Slim\HttpCache\CacheProvider();
-    };
-
-    $container['PelanggaranController'] = function ($c) {
-        $cache = $c->get('cache');
-        return new controller\PelanggaranController($cache);
-    };
-    
-
-    $app = new \Slim\App($container);
-    $app->add(new \Slim\HttpCache\Cache('private', 3600));
+    $app = new \Slim\App($config);
 
     $app->add(new RKA\Middleware\IpAddress());
 
